@@ -1,6 +1,6 @@
 {
   "name": "easy-audit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy auditing tool",
   "main": "proof.js",
   "dependencies": {
