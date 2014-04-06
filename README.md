@@ -10,8 +10,8 @@ This tool is designed to simplify the job of crypto-currency auditors.
 
 This tool is inspired by Olivier Lalonde's PoL and PoA tools:
 
-https://github.com/olalonde/proof-of-liabilities
-https://github.com/olalonde/proof-of-assets
+* https://github.com/olalonde/proof-of-liabilities
+* https://github.com/olalonde/proof-of-assets
 
 The reason I wrote my own was because most exchanges seem to request a type of
 audit which leaks zero information to the public. This tool also expects a data
@@ -136,10 +136,12 @@ exchange operator should disclose to each user their `user_secret`, the sibling
 nodes between them and the root hash and their balance at the reference block
 height. The user should verify:
 
-* The nonce matches `SHA256 ( user_email || user_secret )`
+* Their nonce matches `SHA256 ( user_email || user_secret )`.
 * The balance provided matches what they were holding at the reference
   block height.
-* The siblings provided connect their leaf hash to the root hash.
+* Their leaf hash matches `SHA256 ( nonce || "|" || balance)`.
+* The siblings provided connect their leaf hash to the root hash where each
+  internal node is calculated as `SHA256 ( left_hash || "|" || right_hash )`.
 * The root hash matches the one the auditor signed.
 
 ## Features
