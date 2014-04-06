@@ -58,11 +58,27 @@ describe('Assets', function () {
     it('should succeed when blockheight is an integer string', function () {
       data.blockheight = "123";
       var assets = new Assets(data);
+      assert.strictEqual(assets._blockheight, 123);
     });
 
     it('should succeed when blockheight is an integer', function () {
       data.blockheight = 123;
       var assets = new Assets(data);
+      assert.strictEqual(assets._blockheight, 123);
+    });
+
+    it('should throw when owner is missing', function () {
+      data.owner = void(0);
+      assert.throws(function () {
+        var assets = new Assets(data);
+      });
+    });
+
+    it('should throw when owner is an integer', function () {
+      data.owner = 123;
+      assert.throws(function () {
+        var assets = new Assets(data);
+      });
     });
 
     it('should throw when the message does not match owner and blockhash', function () {
@@ -98,6 +114,32 @@ describe('Assets', function () {
       assert.throws(function () {
         assets.verifySignatures();
       }, /Invalid asset signature/);
+    });
+  });
+  describe('#getBlockHeight', function () {
+    var assets;
+
+    beforeEach(function () {
+      var data = extend(true, {}, exampleData);
+      assets = new Assets(data);
+    });
+
+    it('should return the right blockheight', function () {
+      var total = assets.getTotal();
+      assert.strictEqual(assets.getBlockHeight(), 294548);
+    });
+  });
+  describe('#getOwner', function () {
+    var assets;
+
+    beforeEach(function () {
+      var data = extend(true, {}, exampleData);
+      assets = new Assets(data);
+    });
+
+    it('should return the right owner', function () {
+      var total = assets.getTotal();
+      assert.equal(assets.getOwner(), "example.com");
     });
   });
   describe('#getTotal', function () {
@@ -148,7 +190,7 @@ describe('Assets', function () {
       var assets = Assets.fromFile(filename);
       assert.equal(assets._assets.length, 1);
       assert.equal(assets._assets[0].asset, "1P8EnMGHjwLYcGbdwGUapGRnff758Ux8iS");
-      assert.equal(assets._message, "example.com : 0000000000000000525d3fe3dcb6e08de102d36b51f466f689e33c869049c547");
+      assert.equal(assets._message, "example.com : 000000000000000023d6840808390f0cbefc9ead835daa4dbb5c9d7d0f205eb2");
     });
     it('should throw with no path', function () {
       var filename = void(0);

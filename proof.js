@@ -23,10 +23,13 @@ program
     var liabilities = Liabilities.fromFile(program.args[0], config);
     var assets = Assets.fromFile(program.args[1], config);
 
+    console.log("ASSET OWNER:", assets.getOwner());
+    console.log("BLOCK HEIGHT:", assets.getBlockHeight());
+
     assets.verifySignatures();
 
     var root = liabilities.calculateRoot();
-    console.log("ROOT HASH: "+root);
+    console.log("ROOT HASH:", root);
 
     var totalLiabilities = liabilities.getTotal();
     var totalAssets = assets.getTotal();
@@ -37,7 +40,7 @@ program
     }
 
     var ratio = totalAssets.div(totalLiabilities).times(100).toFixed(2);
-    console.log("RESERVE RATIO", ratio+"%");
+    console.log("RESERVE RATIO:", ratio+"%");
 
     process.exit(0);
   });
