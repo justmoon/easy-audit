@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/justmoon/easy-audit.svg?branch=master)](https://travis-ci.org/justmoon/easy-audit) [![Coverage Status](https://coveralls.io/repos/justmoon/easy-audit/badge.png?branch=master)](https://coveralls.io/r/justmoon/easy-audit?branch=master)
+
+[![NPM](https://nodei.co/npm/easy-audit.png)](https://www.npmjs.org/package/easy-audit)
+
 # Easy Audit
 
 This tool is designed to simplify the job of crypto-currency auditors.
