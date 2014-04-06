@@ -4,9 +4,10 @@
   "description": "Easy auditing tool",
   "main": "proof.js",
   "dependencies": {
-    "commander": "~2.2.0",
-    "big.js": "~2.5.0",
-    "extend": "~1.2.1"
+    "commander": "2.2.0",
+    "big.js": "2.5.0",
+    "extend": "1.2.1",
+    "bitcoinjs-lib": "0.2.0"
   },
   "devDependencies": {},
   "bin": {
