@@ -9,12 +9,17 @@
     "extend": "1.2.1",
     "bitcoinjs-lib": "0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "stream-buffers": "~0.2.5",
+    "mocha": "~1.18.2",
+    "istanbul": "~0.2.7"
+  },
   "bin": {
     "easy-audit": "./proof.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js"
   },
   "author": "Stefan Thomas <justmoon@members.fsf.org>",
   "license": "ISC",

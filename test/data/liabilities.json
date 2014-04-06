@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "nonce" : "13550350a8681c84c861aac2e5b440161c2b33a3e4f302ac680ca5b686de48de",
+      "balance" : "1234"
+    },
+    {
+      "nonce" : "d2aae00e4bc6424d8a6ae7639d41cfff8c5aa56fc6f573e64552a62f35b6293e",
+      "balance" : "2345"
+    },
+    {
+      "nonce" : "38bf13ef9985026a3fb71fea9ae95826cf8d84b02f300d481ba90a61f35504a6",
+      "balance" : "3456"
+    },
+    {
+      "nonce" : "e6444b317290dd94632eb10af1dc70952ca4bb4f0c0e2b19248971cd329b78e8",
+      "balance" : "4567"
+    },
+    {
+      "nonce" : "7bc55ee4cf05e51f3fe03fe9fe07abfdb150fa5e9a3d8de0f55b5c05ff166839",
+      "balance" : "0"
+    }
+  ]
+}

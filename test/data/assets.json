@@ -1,0 +1,13 @@
+{
+  "blockhash": "0000000000000000525d3fe3dcb6e08de102d36b51f466f689e33c869049c547",
+  "blockheight": 294431,
+  "owner": "example.com",
+  "message": "example.com : 0000000000000000525d3fe3dcb6e08de102d36b51f466f689e33c869049c547",
+  "assets": [
+    {
+      "asset": "1P8EnMGHjwLYcGbdwGUapGRnff758Ux8iS",
+      "signature": "HNNpRss3/45/VhuBLYAIFJ+7LYHqzYxsl0g4c61vPvhR8cdub4ZTFLShObjatwrQAIn3haalqvnQqlH70fTVcv0=",
+      "balance": "12450"
+    }
+  ]
+}
