@@ -1,0 +1,41 @@
+{
+  "name": "easy-audit",
+  "version": "1.0.0",
+  "description": "Easy auditing tool",
+  "main": "proof.js",
+  "dependencies": {
+    "commander": "~2.2.0",
+    "big.js": "~2.5.0",
+    "extend": "~1.2.1"
+  },
+  "devDependencies": {},
+  "bin": {
+    "easy-audit": "./proof.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Thomas <justmoon@members.fsf.org>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justmoon/easy-audit"
+  },
+  "keywords": [
+    "bitcoin",
+    "audit",
+    "cryptographic",
+    "easy",
+    "simple",
+    "tool",
+    "liabilities",
+    "assets",
+    "solvency",
+    "reserve",
+    "financial"
+  ],
+  "bugs": {
+    "url": "https://github.com/justmoon/easy-audit/issues"
+  },
+  "homepage": "https://github.com/justmoon/easy-audit"
+}
