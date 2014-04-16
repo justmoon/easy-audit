@@ -19,6 +19,9 @@ describe('AuditReporter', function () {
 
     beforeEach(function () {
       config = new Config();
+      // Redirect output to the void
+      config.reportTo = { write: function noop(){} };
+      config.logTo = { write: function noop(){} };
       reporter = new AuditReporter(config);
     });
 
@@ -47,7 +50,7 @@ describe('AuditReporter', function () {
       assert.equal(debug, "");
     });
 
-    it("should print some debug info when the verbose option is set", function () {
+    it("should print some debug info when the verbose flag is true", function () {
       var stderr = config.logTo = new streamBuffers.WritableStreamBuffer();
       config.verbose = true;
 
