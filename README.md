@@ -164,7 +164,7 @@ npm test
 You can also generate a code coverage report:
 
 ``` sh
-npm run coverage
+npm test --coverage
 ```
 
 ## Future plans
