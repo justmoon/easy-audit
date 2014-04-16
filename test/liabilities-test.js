@@ -54,7 +54,7 @@ describe('Liabilities', function () {
 
       liabilities.calculateRoot();
 
-      assert.equal(stderr.getContentsAsString("utf8"), "Building tree with 5 accounts\n");
+      assert.equal(stderr.getContentsAsString(), "Building tree with 5 accounts\n");
     });
   });
   describe('#combineNodes', function () {

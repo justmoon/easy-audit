@@ -106,7 +106,7 @@ describe('Assets', function () {
 
       assets.verifySignatures();
 
-      assert.equal(stderr.getContentsAsString("utf8"), "Verifying 1 assets.DONE\n");
+      assert.equal(stderr.getContentsAsString(), "Verifying 1 assets.DONE\n");
     });
 
     it('should throw when signatures are invalid', function () {

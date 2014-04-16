@@ -3,9 +3,7 @@
 var program = require('commander'),
     fs = require('fs');
 
-var Config = require('./lib/config').Config,
-    Liabilities = require('./lib/liabilities').Liabilities,
-    Assets = require('./lib/assets').Assets;
+var Config = require('./lib/config').Config;
 
 program
   .version(JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8')).version)
@@ -20,27 +18,8 @@ program
   .action(function () {
     var config = Config.fromProgram(program);
 
-    var liabilities = Liabilities.fromFile(program.args[0], config);
-    var assets = Assets.fromFile(program.args[1], config);
-
-    console.log("ASSET OWNER:", assets.getOwner());
-    console.log("BLOCK HEIGHT:", assets.getBlockHeight());
-
-    assets.verifySignatures();
-
-    var root = liabilities.calculateRoot();
-    console.log("ROOT HASH:", root);
-
-    var totalLiabilities = liabilities.getTotal();
-    var totalAssets = assets.getTotal();
-
-    if (config.verbose) {
-      process.stderr.write("Total liabilities: "+totalLiabilities.toString()+"\n");
-      process.stderr.write("Total assets:      "+totalAssets.toString()+"\n");
-    }
-
-    var ratio = totalAssets.div(totalLiabilities).times(100).toFixed(2);
-    console.log("RESERVE RATIO:", ratio+"%");
+    var reporter = new AuditReporter(config);
+    reporter.audit(program.args[0], program.args[1]);
 
     process.exit(0);
   });
