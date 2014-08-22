@@ -4,6 +4,7 @@ var program = require('commander'),
     fs = require('fs');
 
 var Config = require('./lib/config').Config;
+var AuditReporter = require('./lib/audit_reporter').AuditReporter;
 
 program
   .version(JSON.parse(fs.readFileSync(__dirname + '/package.json', 'utf8')).version)
